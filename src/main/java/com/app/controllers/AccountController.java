@@ -1,24 +1,42 @@
 package com.app.controllers;
 
+import com.app.services.IAccountService;
 import nanonout.endpointrouting.ControllerBase;
 import nanonout.endpointrouting.annotations.*;
 
+import java.util.List;
+
 @Route(path = "/account")
 public class AccountController extends ControllerBase {
-    @Get
-    public String get() {
-        return "welcome";
+    private IAccountService iAccountService;
+
+    public AccountController(IAccountService iAccountService) {
+        this.iAccountService = iAccountService;
     }
+
+    @Get(path = "/:id")
+    public TestModel get(int id) {
+        return iAccountService.get(id);
+    }
+    @Get(path = "/")
+    public List<TestModel> getAll() {
+        return iAccountService.getAll();
+    }
+
     @Post
-    public String post(String name){
-        return "this is post "+name;
+    public TestModel post(TestModel model){
+        return iAccountService.add(model);
+
     }
-    @Put
-    public String put(String name){
-        return "this is post "+name;
+    @Put(path = "/:id")
+    public TestModel put(TestModel model,int id){
+        model.setId(id);
+        return iAccountService.update(model);
     }
-    @Delete
-    public String delete(String name){
-        return "this is post "+name;
+    @Delete(path = "/:id")
+    public String delete(int id){
+
+        iAccountService.delete(id);
+        return "delete successful";
     }
 }
