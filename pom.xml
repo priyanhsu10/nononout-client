@@ -5,7 +5,7 @@
 
   <groupId>org.example</groupId>
   <artifactId>nononout-client</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <name>tesingReflection Maven Webapp</name>
@@ -21,7 +21,7 @@
     <connection>scm:git:git@github.com:priyanhsu10/nononout-client.git</connection>
     <developerConnection>scm:git:git@github.com:priyanhsu10/nononout-client.git</developerConnection>
   <url>https://github.com/priyanhsu10/nononout-client</url>
-    <tag>1.0</tag>
+    <tag>v@{project.version}</tag>
   </scm>
 
   <dependencies>
