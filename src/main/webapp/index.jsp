@@ -7,9 +7,9 @@
 <h1>
 
     model binding with framework
-    id: ${test.id}
-    name: ${test.name}
-    age: ${test.age}
+    id: ${ test.id }
+    name: ${ test.name }
+    age: ${ test.age }
 </h1>
 </body>
 </html>
